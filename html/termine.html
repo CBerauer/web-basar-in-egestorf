@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termine - Basar in Egestorf</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Century+Gothic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../html/style-modern.css">
+    <script src="../config.js"></script>
+    <script src="../assets/rollover.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-item">
+                    <img src="../assets/images/autogen/Home_Noffline.png" 
+                         onmouseover="this.src='../assets/images/autogen/Home_NRonline.png'"
+                         onmouseout="this.src='../assets/images/autogen/Home_Noffline.png'"
+                         alt="Home" title="Home">
+                </a>
+                <a href="../html/infos.html" class="nav-item">
+                    <img src="../assets/images/autogen/Infos_Noffline.png" 
+                         onmouseover="this.src='../assets/images/autogen/Infos_NRonline.png'"
+                         onmouseout="this.src='../assets/images/autogen/Infos_Noffline.png'"
+                         alt="Infos" title="Infos">
+                </a>
+                <a href="../html/galerie.html" class="nav-item">
+                    <img src="../assets/images/autogen/Galerie_Noffline.png" 
+                         onmouseover="this.src='../assets/images/autogen/Galerie_NRonline.png'"
+                         onmouseout="this.src='../assets/images/autogen/Galerie_Noffline.png'"
+                         alt="Galerie" title="Galerie">
+                </a>
+                <a href="../html/team.html" class="nav-item">
+                    <img src="../assets/images/autogen/Team_Noffline.png" 
+                         onmouseover="this.src='../assets/images/autogen/Team_NRonline.png'"
+                         onmouseout="this.src='../assets/images/autogen/Team_Noffline.png'"
+                         alt="Team" title="Team">
+                </a>
+                <a href="../html/kontakt.html" class="nav-item">
+                    <img src="../assets/images/autogen/Kontakt_Noffline.png" 
+                         onmouseover="this.src='../assets/images/autogen/Kontakt_NRonline.png'"
+                         onmouseout="this.src='../assets/images/autogen/Kontakt_Noffline.png'"
+                         alt="Kontakt" title="Kontakt">
+                </a>
+                <a href="../html/anfahrt.html" class="nav-item">
+                    <img src="../assets/images/autogen/Anfahrt_Noffline.png" 
+                         onmouseover="this.src='../assets/images/autogen/Anfahrt_NRonline.png'"
+                         onmouseout="this.src='../assets/images/autogen/Anfahrt_Noffline.png'"
+                         alt="Anfahrt" title="Anfahrt">
+                </a>
+                <a href="../html/termine.html" class="nav-item active">
+                    <img src="../assets/images/autogen/Termine_Honline.png" 
+                         onmouseover="this.src='../assets/images/autogen/Termine_HRonline.png'"
+                         onmouseout="this.src='../assets/images/autogen/Termine_Honline.png'"
+                         alt="Termine" title="Termine">
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header Image -->
+            <header class="header-image">
+                <img src="../assets/images/autogen/WaescheLeine.png" alt="Basar-in-Egestorf" title="Basar-in-Egestorf">
+            </header>
+
+            <!-- Page Content -->
+            <div class="content">
+                <h1 class="subtitle">für Kinderbekleidung &amp; Spielsachen<br>auf Kommissionsbasis</h1>
+
+                <div class="termine-content">
+                    <h2 class="season-heading">FRÜHJAHR <span id="spring-year">2026</span></h2>
+                    <p class="date-info">
+                        <strong class="large-date" id="spring-date">Samstag den 08.03.2026</strong><br>
+                        <span class="time-label">von</span>
+                        <strong class="large-time" id="spring-time">14:30 bis 16:30 Uhr</strong>
+                    </p>
+
+                    <h2 class="season-heading">HERBST <span id="fall-year">2026</span></h2>
+                    <p class="date-info future">
+                        <span id="fall-date">Der Herbst-Termin ist für den 06. September geplant.</span>
+                    </p>
+                </div>
+
+                <!-- Footer Logo -->
+                <div class="footer-logo">
+                    <img src="../assets/images/autogen/Termine-Logo.png" alt="Termine-Logo">
+                </div>
+
+                <!-- Text Navigation -->
+                <nav class="text-nav">
+                    <a href="../index.html">Home</a>
+                    <a href="../html/infos.html">Infos</a>
+                    <a href="../html/galerie.html">Galerie</a>
+                    <a href="../html/team.html">Team</a>
+                    <a href="../html/kontakt.html">Kontakt</a>
+                    <a href="../html/anfahrt.html">Anfahrt</a>
+                    <span class="active">Termine</span>
+                </nav>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Extract year from spring date
+            const springYearMatch = basarConfig.spring.date.match(/\d{4}/);
+            const springYear = springYearMatch ? springYearMatch[0] : new Date().getFullYear();
+            
+            // Extract year from fall date
+            const fallYearMatch = basarConfig.fall.date.match(/\d{4}/);
+            const fallYear = fallYearMatch ? fallYearMatch[0] : new Date().getFullYear();
+            
+            // Update years
+            document.getElementById('spring-year').textContent = springYear;
+            document.getElementById('fall-year').textContent = fallYear;
+            
+            // Update spring date
+            document.getElementById('spring-date').textContent = basarConfig.spring.date;
+            document.getElementById('spring-time').textContent = basarConfig.spring.time;
+            
+            // Update fall date
+            const fallInfo = basarConfig.fall.date ? 
+                `${basarConfig.fall.date} von ${basarConfig.fall.time}` :
+                'Der Herbst-Termin ist für September geplant.';
+            document.getElementById('fall-date').textContent = fallInfo;
+        });
+    </script>
+</body>
+</html>

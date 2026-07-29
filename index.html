@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basar in Egestorf - Home</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Century+Gothic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./html/style-modern.css">
+    <script src="./config.js"></script>
+    <script src="./assets/rollover.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="nav-menu">
+                <a href="./index.html" class="nav-item active">
+                    <img src="./assets/images/autogen/Home_Honline.png" 
+                         onmouseover="this.src='./assets/images/autogen/Home_HRonline.png'"
+                         onmouseout="this.src='./assets/images/autogen/Home_Honline.png'"
+                         alt="Home" title="Home">
+                </a>
+                <a href="./html/infos.html" class="nav-item">
+                    <img src="./assets/images/autogen/Infos_Noffline.png" 
+                         onmouseover="this.src='./assets/images/autogen/Infos_NRonline.png'"
+                         onmouseout="this.src='./assets/images/autogen/Infos_Noffline.png'"
+                         alt="Infos" title="Infos">
+                </a>
+                <a href="./html/galerie.html" class="nav-item">
+                    <img src="./assets/images/autogen/Galerie_Noffline.png" 
+                         onmouseover="this.src='./assets/images/autogen/Galerie_NRonline.png'"
+                         onmouseout="this.src='./assets/images/autogen/Galerie_Noffline.png'"
+                         alt="Galerie" title="Galerie">
+                </a>
+                <a href="./html/team.html" class="nav-item">
+                    <img src="./assets/images/autogen/Team_Noffline.png" 
+                         onmouseover="this.src='./assets/images/autogen/Team_NRonline.png'"
+                         onmouseout="this.src='./assets/images/autogen/Team_Noffline.png'"
+                         alt="Team" title="Team">
+                </a>
+                <a href="./html/kontakt.html" class="nav-item">
+                    <img src="./assets/images/autogen/Kontakt_Noffline.png" 
+                         onmouseover="this.src='./assets/images/autogen/Kontakt_NRonline.png'"
+                         onmouseout="this.src='./assets/images/autogen/Kontakt_Noffline.png'"
+                         alt="Kontakt" title="Kontakt">
+                </a>
+                <a href="./html/anfahrt.html" class="nav-item">
+                    <img src="./assets/images/autogen/Anfahrt_Noffline.png" 
+                         onmouseover="this.src='./assets/images/autogen/Anfahrt_NRonline.png'"
+                         onmouseout="this.src='./assets/images/autogen/Anfahrt_Noffline.png'"
+                         alt="Anfahrt" title="Anfahrt">
+                </a>
+                <a href="./html/termine.html" class="nav-item">
+                    <img src="./assets/images/autogen/Termine_Noffline.png" 
+                         onmouseover="this.src='./assets/images/autogen/Termine_NRonline.png'"
+                         onmouseout="this.src='./assets/images/autogen/Termine_Noffline.png'"
+                         alt="Termine" title="Termine">
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header Image -->
+            <header class="header-image">
+                <img src="./assets/images/autogen/WaescheLeine.png" alt="Basar-in-Egestorf" title="Basar-in-Egestorf">
+            </header>
+
+            <!-- Page Content -->
+            <div class="content">
+                <h1 class="subtitle">für Kinderbekleidung &amp; Spielsachen<br>auf Kommissionsbasis</h1>
+
+                <div class="info-section">
+                    <div class="info-item">
+                        <span class="bullet">►</span>
+                        <div class="info-content">
+                            <h2 class="venue-name">Fritz-Ahrberg-Halle</h2>
+                            <span class="sub-venue">(Turnhalle Ernst-Reuter-Schule)</span>
+                            <p class="address">
+                                Nienstedter Str. 15<br>
+                                Barsinghausen / Egestorf
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="bullet">►</span>
+                        <div class="info-content">
+                            <h2 class="next-date">
+                                <span class="label">nächster Termin:</span>
+                                <span id="next-date" class="date">Samstag, 08.03.2026</span>
+                            </h2>
+                            <p class="time" id="next-time">von 14:30 bis 16:30 Uhr</p>
+                            
+                            <!-- Registration Status (dynamic) -->
+                            <div id="registration-status" class="registration-status">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                            
+                            <p class="other-date" id="other-date">Der Herbsttermin ist für September 2026 geplant.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="bullet">►</span>
+                        <div class="info-content">
+                            <p>mit tollem Kuchenbüfett</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="bullet">►</span>
+                        <div class="info-content">
+                            <p>
+                                Wir verkaufen nach Themen und Größen 50-188 sortierte,<br>
+                                zeitgemäße und gut erhaltene Kinderkleidung der<br>
+                                jeweiligen Saison.<br>
+                                <strong> Auch TEENIE-MODE. Extra Bereich wird eingerichtet.<br>
+                                Größen XS - L</strong><br>
+                                Desweiteren Spielzeug, Bücher und Spiele, sowie Großteile<br>
+                                z.B. Fahrräder, Kindersitze und vieles mehr...-<br>
+                                Neu: Keine Mengenbegrenzung der Kleidung bis Gr. 98 mehr<br>
+                                <span class="highlight">"ALLES RUND ums KIND".</span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer Logo -->
+                <div class="footer-logo">
+                    <img src="./assets/images/Home-Logo1.png" alt="Home-Logo1">
+                </div>
+
+                <!-- Text Navigation -->
+                <nav class="text-nav">
+                    <span class="active">Home</span>
+                    <a href="./html/infos.html">Infos</a>
+                    <a href="./html/galerie.html">Galerie</a>
+                    <a href="./html/team.html">Team</a>
+                    <a href="./html/kontakt.html">Kontakt</a>
+                    <a href="./html/anfahrt.html">Anfahrt</a>
+                    <a href="./html/termine.html">Termine</a>
+                </nav>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Dynamic content population from config
+        document.addEventListener('DOMContentLoaded', function() {
+            const current = basarConfig.getCurrent();
+            const other = basarConfig.nextBasar === 'spring' ? basarConfig.fall : basarConfig.spring;
+            const otherSeason = basarConfig.nextBasar === 'spring' ? 'Herbst' : 'Frühling';
+            
+            // Update date and time
+            document.getElementById('next-date').textContent = current.date;
+            document.getElementById('next-time').textContent = 'von ' + current.time;
+            
+            // Update other season info
+            document.getElementById('other-date').textContent = 
+                `Der ${otherSeason}termin ist für den ${other.date} geplant.`;
+            
+            // Registration status with countdown
+            const statusDiv = document.getElementById('registration-status');
+            
+            if (current.registrationFull) {
+                statusDiv.innerHTML = `
+                    <p class="alert">
+                        Die maximale Anmeldezahl wurde erreicht.<br>
+                        Daher wurde die Anmeldemöglichkeit beendet.<br>
+                        Vielen Dank für Ihr Interesse!
+                    </p>`;
+            } else {
+                // Parse registration opening date/time
+                const regDateParts = current.registrationOpenDate.match(/(\d{2})\.(\d{2})\.(\d{4})/);
+                const regTimeParts = current.registrationOpenTime.match(/(\d{1,2}):(\d{2})/);
+                
+                if (regDateParts && regTimeParts) {
+                    const day = parseInt(regDateParts[1]);
+                    const month = parseInt(regDateParts[2]) - 1; // JavaScript months are 0-indexed
+                    const year = parseInt(regDateParts[3]);
+                    const hours = parseInt(regTimeParts[1]);
+                    const minutes = parseInt(regTimeParts[2]);
+                    const registrationDateTime = new Date(year, month, day, hours, minutes, 0);
+                    
+                    statusDiv.innerHTML = `
+                        <p class="info">
+                            Die Anmeldung öffnet am ${current.registrationOpenDate} um ${current.registrationOpenTime}
+                        </p>
+                        <div class="countdown-container">
+                            <div class="countdown-label-left">Countdown bis<br>Anmeldestart:</div>
+                            <div id="countdown" class="countdown"></div>
+                        </div>`;
+                    
+                    // Update countdown every second
+                    function updateCountdown() {
+                        const now = new Date();
+                        const diff = registrationDateTime - now;
+                        
+                        if (diff <= 0) {
+                            document.getElementById('countdown').innerHTML = '<a href="./html/anmeldung.html" class="btn-register">Die Anmeldung ist jetzt geöffnet!</a>';
+                            return;
+                        }
+                        
+                        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                        
+                        let countdownText = '<div class="countdown-timer">';
+                        if (days > 0) {
+                            countdownText += `<div class="countdown-unit"><span class="countdown-value">${days}</span><span class="countdown-label">Tag${days !== 1 ? 'e' : ''}</span></div>`;
+                        }
+                        countdownText += `
+                            <div class="countdown-unit"><span class="countdown-value">${hours.toString().padStart(2, '0')}</span><span class="countdown-label">Std</span></div>
+                            <div class="countdown-unit"><span class="countdown-value">${minutes.toString().padStart(2, '0')}</span><span class="countdown-label">Min</span></div>
+                            <div class="countdown-unit"><span class="countdown-value">${seconds.toString().padStart(2, '0')}</span><span class="countdown-label">Sek</span></div>
+                        </div>`;
+                        
+                        document.getElementById('countdown').innerHTML = countdownText;
+                  }
+                    
+                    updateCountdown();
+                    setInterval(updateCountdown, 1000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

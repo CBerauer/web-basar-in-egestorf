@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Basar Configuration</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Century Gothic', Arial, sans-serif;
+            background: rgb(255, 225, 0);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ff0000;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .login-section, .admin-section {
+            display: none;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #ff0000;
+        }
+        .btn {
+            background: #ff0000;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #cc0000;
+        }
+        .btn-secondary {
+            background: #666;
+            margin-left: 10px;
+        }
+        .btn-secondary:hover {
+            background: #444;
+        }
+        .section {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #ff0000;
+        }
+        .section h2 {
+            color: #ff0000;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .help-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .message {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Section -->
+        <div class="login-section" id="loginSection">
+            <h1>🔒 Admin Login</h1>
+            <p class="subtitle">Basar Configuration Editor</p>
+            
+            <div class="form-group">
+                <label for="password">Passwort:</label>
+                <input type="password" id="password" placeholder="Admin-Passwort eingeben">
+            </div>
+            
+            <button class="btn" onclick="checkPassword()">Anmelden</button>
+            
+            <div id="loginError" class="message error" style="margin-top: 20px;">
+                Falsches Passwort!
+            </div>
+        </div>
+
+        <!-- Admin Section -->
+        <div class="admin-section" id="adminSection">
+            <h1>⚙️ Basar Configuration</h1>
+            <p class="subtitle">Bearbeite die Basar-Einstellungen</p>
+            
+            <div id="saveMessage" class="message"></div>
+
+            <form id="configForm">
+                <!-- Current Season -->
+                <div class="section">
+                    <h2>Aktueller Basar</h2>
+                    <div class="form-group">
+                        <label for="nextBasar">Nächster Basar:</label>
+                        <select id="nextBasar" required>
+                            <option value="spring">Frühling</option>
+                            <option value="fall">Herbst</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Spring Basar -->
+                <div class="section">
+                    <h2>Frühlings-Basar</h2>
+                    
+                    <div class="form-group">
+                        <label for="springDate">Datum:</label>
+                        <input type="text" id="springDate" placeholder="z.B. Samstag, 07.03.2026" required>
+                        <div class="help-text">Format: Wochentag, TT.MM.JJJJ</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="springTime">Uhrzeit:</label>
+                        <input type="text" id="springTime" placeholder="z.B. 14:30 bis 16:30 Uhr" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="springRegDate">Anmeldung öffnet am:</label>
+                        <input type="text" id="springRegDate" placeholder="z.B. Donnerstag, 19.02.2026" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="springRegTime">Anmeldung öffnet um:</label>
+                        <input type="text" id="springRegTime" placeholder="z.B. 08:00" required>
+                        <div class="help-text">Format: HH:MM (24-Stunden)</div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="springFull">
+                        <label for="springFull" style="margin: 0;">Anmeldung ist voll</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="springURL">Google Forms URL:</label>
+                        <input type="text" id="springURL" placeholder="https://docs.google.com/forms/..." required>
+                    </div>
+                </div>
+
+                <!-- Fall Basar -->
+                <div class="section">
+                    <h2>Herbst-Basar</h2>
+                    
+                    <div class="form-group">
+                        <label for="fallDate">Datum:</label>
+                        <input type="text" id="fallDate" placeholder="z.B. Samstag, 05.09.2026" required>
+                        <div class="help-text">Format: Wochentag, TT.MM.JJJJ</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fallTime">Uhrzeit:</label>
+                        <input type="text" id="fallTime" placeholder="z.B. 14:30 bis 16:30 Uhr" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fallRegDate">Anmeldung öffnet am:</label>
+                        <input type="text" id="fallRegDate" placeholder="z.B. Donnerstag, 20.08.2026" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fallRegTime">Anmeldung öffnet um:</label>
+                        <input type="text" id="fallRegTime" placeholder="z.B. 08:00" required>
+                        <div class="help-text">Format: HH:MM (24-Stunden)</div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="fallFull">
+                        <label for="fallFull" style="margin: 0;">Anmeldung ist voll</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fallURL">Google Forms URL:</label>
+                        <input type="text" id="fallURL" placeholder="https://docs.google.com/forms/..." required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">💾 Speichern</button>
+                <button type="button" class="btn btn-secondary" onclick="logout()">Abmelden</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Load config.js with cache busting
+        const configScript = document.createElement('script');
+        configScript.src = './config.js?v=' + Date.now();
+        document.head.appendChild(configScript);
+    </script>
+    <script>
+        // CHANGE THIS PASSWORD! Use a strong password for production
+        const ADMIN_PASSWORD = "Basar2026!admin";
+
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('adminSection').style.display = 'block';
+                document.getElementById('loginError').style.display = 'none';
+                loadConfig();
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+            }
+        }
+
+        function loadConfig() {
+            // Wait for basarConfig to be available
+            if (typeof basarConfig === 'undefined') {
+                setTimeout(loadConfig, 100);
+                return;
+            }
+            
+            // Load current config values
+            document.getElementById('nextBasar').value = basarConfig.nextBasar;
+            
+            // Spring
+            document.getElementById('springDate').value = basarConfig.spring.date;
+            document.getElementById('springTime').value = basarConfig.spring.time;
+            document.getElementById('springRegDate').value = basarConfig.spring.registrationOpenDate;
+            document.getElementById('springRegTime').value = basarConfig.spring.registrationOpenTime;
+            document.getElementById('springFull').checked = basarConfig.spring.registrationFull;
+            document.getElementById('springURL').value = basarConfig.spring.registrationURL;
+            
+            // Fall
+            document.getElementById('fallDate').value = basarConfig.fall.date;
+            document.getElementById('fallTime').value = basarConfig.fall.time;
+            document.getElementById('fallRegDate').value = basarConfig.fall.registrationOpenDate;
+            document.getElementById('fallRegTime').value = basarConfig.fall.registrationOpenTime;
+            document.getElementById('fallFull').checked = basarConfig.fall.registrationFull;
+            document.getElementById('fallURL').value = basarConfig.fall.registrationURL;
+        }
+
+        function logout() {
+            document.getElementById('loginSection').style.display = 'block';
+            document.getElementById('adminSection').style.display = 'none';
+            document.getElementById('password').value = '';
+        }
+
+        document.getElementById('configForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const config = {
+                nextBasar: document.getElementById('nextBasar').value,
+                spring: {
+                    date: document.getElementById('springDate').value,
+                    time: document.getElementById('springTime').value,
+                    registrationOpenDate: document.getElementById('springRegDate').value,
+                    registrationOpenTime: document.getElementById('springRegTime').value,
+                    registrationFull: document.getElementById('springFull').checked,
+                    registrationURL: document.getElementById('springURL').value
+                },
+                fall: {
+                    date: document.getElementById('fallDate').value,
+                    time: document.getElementById('fallTime').value,
+                    registrationOpenDate: document.getElementById('fallRegDate').value,
+                    registrationOpenTime: document.getElementById('fallRegTime').value,
+                    registrationFull: document.getElementById('fallFull').checked,
+                    registrationURL: document.getElementById('fallURL').value
+                }
+            };
+
+            // Send to PHP backend
+            fetch('./save-config.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(config)
+            })
+            .then(response => response.json())
+            .then(data => {
+                const msg = document.getElementById('saveMessage');
+                if (data.success) {
+                    msg.className = 'message success';
+                    msg.textContent = '✅ Konfiguration erfolgreich gespeichert! Seite wird neu geladen...';
+                    msg.style.display = 'block';
+                    // Force reload with cache clear after 1 second
+                    setTimeout(() => {
+                        window.location.href = window.location.href.split('?')[0] + '?nocache=' + Date.now();
+                    }, 1000);
+                } else {
+                    msg.className = 'message error';
+                    msg.textContent = '❌ Fehler beim Speichern: ' + data.error;
+                    msg.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                const msg = document.getElementById('saveMessage');
+                msg.className = 'message error';
+                msg.textContent = '❌ Fehler: ' + error.message;
+                msg.style.display = 'block';
+            });
+        });
+
+        // Show login on load
+        window.onload = function() {
+            document.getElementById('loginSection').style.display = 'block';
+        };
+
+        // Allow Enter key to login
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+    </script>
+</body>
+</html>

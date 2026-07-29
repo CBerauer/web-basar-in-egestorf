@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmeldung - Basar in Egestorf</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Century+Gothic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../html/style-modern.css">
+    <script src="../config.js"></script>
+    <script src="../assets/rollover.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-item">
+                    <img src="../assets/images/autogen/Home_Noffline_1.png" 
+                         onmouseover="this.src='../assets/images/autogen/Home_NRonline_1.png'"
+                         onmouseout="this.src='../assets/images/autogen/Home_Noffline_1.png'"
+                         alt="Home" title="Home">
+                </a>
+                <a href="../html/infos.html" class="nav-item">
+                    <img src="../assets/images/autogen/Infos_Noffline_1.png" 
+                         onmouseover="this.src='../assets/images/autogen/Infos_NRonline_1.png'"
+                         onmouseout="this.src='../assets/images/autogen/Infos_Noffline_1.png'"
+                         alt="Infos" title="Infos">
+                </a>
+                <a href="../html/galerie.html" class="nav-item">
+                    <img src="../assets/images/autogen/Galerie_Noffline_1.png" 
+                         onmouseover="this.src='../assets/images/autogen/Galerie_NRonline_1.png'"
+                         onmouseout="this.src='../assets/images/autogen/Galerie_Noffline_1.png'"
+                         alt="Galerie" title="Galerie">
+                </a>
+                <a href="../html/team.html" class="nav-item">
+                    <img src="../assets/images/autogen/Team_Noffline_1.png" 
+                         onmouseover="this.src='../assets/images/autogen/Team_NRonline_1.png'"
+                         onmouseout="this.src='../assets/images/autogen/Team_Noffline_1.png'"
+                         alt="Team" title="Team">
+                </a>
+                <a href="../html/kontakt.html" class="nav-item active">
+                    <img src="../assets/images/autogen/Kontakt_Honline_1.png" 
+                         onmouseover="this.src='../assets/images/autogen/Kontakt_HRonline_1.png'"
+                         onmouseout="this.src='../assets/images/autogen/Kontakt_Honline_1.png'"
+                         alt="Kontakt" title="Kontakt">
+                </a>
+                <a href="../html/anfahrt.html" class="nav-item">
+                    <img src="../assets/images/autogen/Anfahrt_Noffline_1.png" 
+                         onmouseover="this.src='../assets/images/autogen/Anfahrt_NRonline_1.png'"
+                         onmouseout="this.src='../assets/images/autogen/Anfahrt_Noffline_1.png'"
+                         alt="Anfahrt" title="Anfahrt">
+                </a>
+                <a href="../html/termine.html" class="nav-item">
+                    <img src="../assets/images/autogen/Termine_Noffline_1.png" 
+                         onmouseover="this.src='../assets/images/autogen/Termine_NRonline_1.png'"
+                         onmouseout="this.src='../assets/images/autogen/Termine_Noffline_1.png'"
+                         alt="Termine" title="Termine">
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header-image">
+                <img src="../assets/images/autogen/WaescheLeine.png" alt="Basar-in-Egestorf" title="Basar-in-Egestorf">
+            </header>
+
+            <div class="content registration-page">
+                <iframe id="registration-frame" src="" width="760" height="1000" frameborder="0" marginheight="0" marginwidth="0">Wird geladen...</iframe>
+                
+                <nav class="text-nav">
+                    <a href="../index.html">Home</a>
+                    <a href="../html/infos.html">Infos</a>
+                    <a href="../html/galerie.html">Galerie</a>
+                    <a href="../html/team.html">Team</a>
+                    <a href="../html/kontakt.html">Kontakt</a>
+                    <a href="../html/anfahrt.html">Anfahrt</a>
+                    <a href="../html/termine.html">Termine</a>
+                </nav>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const current = basarConfig.getCurrent();
+            const iframe = document.getElementById('registration-frame');
+            
+            if (current.registrationURL) {
+                iframe.src = current.registrationURL;
+            } else {
+                iframe.style.display = 'none';
+                const message = document.createElement('p');
+                message.className = 'info';
+                message.style.textAlign = 'center';
+                message.style.fontSize = '20px';
+                message.textContent = 'Die Anmeldung ist derzeit nicht verfügbar.';
+                iframe.parentNode.insertBefore(message, iframe);
+            }
+        });
+    </script>
+</body>
+</html>
