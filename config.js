@@ -16,7 +16,7 @@ const basarConfig = {
         time: "14:30 bis 16:30 Uhr",
         registrationOpenDate: "Donnerstag, 10.09.2026",
         registrationOpenTime: "08:00",
-        registrationFull: false,
+        registrationFull: true,
         registrationURL: "https://docs.google.com/forms/d/e/1FAIpQLSdLZrI73DGTP1ex_ISVV30VSuIKdFVEyUIYihV16jyZvrUSPg/viewform"
     },
 
