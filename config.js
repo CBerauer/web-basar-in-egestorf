@@ -12,9 +12,9 @@ const basarConfig = {
 
     // Fall Basar
     fall: {
-        date: "Samstag, 26.09.2026",
+        date: "Samstag, 25.09.2027",
         time: "14:30 bis 16:30 Uhr",
-        registrationOpenDate: "Donnerstag, 10.09.2026",
+        registrationOpenDate: "Donnerstag, 09.09.2027",
         registrationOpenTime: "08:00",
         registrationFull: true,
         registrationURL: "https://docs.google.com/forms/d/e/1FAIpQLSdLZrI73DGTP1ex_ISVV30VSuIKdFVEyUIYihV16jyZvrUSPg/viewform"
@@ -29,7 +29,7 @@ const basarConfig = {
     },
 
     // Which basar is next? 'spring' or 'fall'
-    nextBasar: 'fall',
+    nextBasar: 'spring',
 
     // Get current basar info
     getCurrent: function() {
