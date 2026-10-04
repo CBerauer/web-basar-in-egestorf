@@ -2,7 +2,7 @@
 const basarConfig = {
     // Spring Basar
     spring: {
-        date: "Samstag, 06.03.2027 (vorraussichtlich)",
+        date: "Samstag, 06.03.2027",
         time: "14:30 bis 16:30 Uhr",
         registrationOpenDate: "Donnerstag, 18.02.2026",
         registrationOpenTime: "08:00",
@@ -12,7 +12,7 @@ const basarConfig = {
 
     // Fall Basar
     fall: {
-        date: "Samstag, 25.09.2027",
+        date: "Samstag, 25.09.2027 (vorraussichtlich)",
         time: "14:30 bis 16:30 Uhr",
         registrationOpenDate: "Donnerstag, 09.09.2027",
         registrationOpenTime: "08:00",
